@@ -140,10 +140,12 @@ void GraphicsCapture::onFrameArrived(winrt::Windows::Graphics::Capture::Direct3D
 }
 
 
-void TestGraphicsCapture()
+void TestGraphicsCapture(HWND target)
 {
-    HMONITOR target = ::MonitorFromPoint({ 0, 0 }, MONITOR_DEFAULTTOPRIMARY);
-
+    if (target == NULL) {
+        printf("HWND not found");
+        exit(1);
+    }
     GraphicsCapture capture;
 
     // single threaded

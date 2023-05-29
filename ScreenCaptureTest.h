@@ -8,7 +8,7 @@ bool SaveAsPNG(const char* path, int w, int h, int stride, const void* data, boo
 
 void TestGDI();
 void TestDesktopDuplication();
-void TestGraphicsCapture();
+void TestGraphicsCapture(HWND target);
 
 class ProfileTimer
 {
